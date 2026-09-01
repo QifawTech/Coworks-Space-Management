@@ -5,3 +5,4 @@ bcrypt==4.1.2
 PyJWT==2.8.0
 APScheduler==3.10.4
 twilio==9.0.4
+gunicorn==21.2.0
