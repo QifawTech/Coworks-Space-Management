@@ -1,5 +1,6 @@
-# wsgi.py  ← NEW FILE, add to root of project
-from app import app as application  # import your existing Flask app
+from app import app
 
-if __name__ == "__main__":
+application = app
+
+if __name__ == '__main__':
     application.run()
