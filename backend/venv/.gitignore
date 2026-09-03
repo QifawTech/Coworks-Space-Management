@@ -1,5 +1,8 @@
+# .gitignore
+.env
 venv/
 __pycache__/
-.env
-uploads/
 *.pyc
+*.pyo
+uploads/
+*.zip
