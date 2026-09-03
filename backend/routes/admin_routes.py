@@ -1,5 +1,4 @@
 from flask import Blueprint, jsonify, request
-import mysql.connector
 from db import get_db_connection, encrypt_data, decrypt_data
 import csv
 import io
