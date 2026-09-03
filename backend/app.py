@@ -14,6 +14,7 @@ from routes.tenant_routes import tenant_bp
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True, methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"])
 
 UPLOAD_FOLDER = 'uploads'
@@ -24,6 +25,10 @@ app.register_blueprint(auth_bp)
 app.register_blueprint(super_admin_bp)
 app.register_blueprint(admin_bp)
 app.register_blueprint(tenant_bp)
+
+@app.route('/')
+def health_check():
+    return "OK", 200
 
 @app.route('/uploads/<path:filename>')
 def serve_uploads(filename):
