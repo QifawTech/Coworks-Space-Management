@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from werkzeug.security import check_password_hash
-from db import get_db_connection, encrypt_data, decrypt_data, generate_password_hash
-
+from db import get_db_connection, encrypt_data, decrypt_data
+from werkzeug.security import check_password_hash, generate_password_hash
 auth_bp = Blueprint('auth_bp', __name__)
 
 @auth_bp.route('/api/tenant-login', methods=['POST'])
