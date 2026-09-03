@@ -1,12 +1,9 @@
-# wsgi.py
+import sys
 import os
-from app import create_app
 
-# Load environment
-env = os.environ.get('FLASK_ENV', 'production')
+sys.path.insert(0, os.path.dirname(__file__))
 
-# Create the application instance
-application = create_app(env)
+from app import app as application
 
 if __name__ == "__main__":
     application.run(host='0.0.0.0', port=5000)
