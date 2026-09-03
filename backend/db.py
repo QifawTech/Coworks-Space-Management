@@ -1,19 +1,24 @@
-
-
-import mysql.connector
+# db.py
+import pymysql
 import base64
 import os
-from dotenv import load_dotenv
 from werkzeug.security import generate_password_hash
 
-load_dotenv()
+# These come from EB Environment Properties — no .env needed!
+DB_HOST = os.environ.get('DB_HOST')
+DB_USER = os.environ.get('DB_USER')
+DB_PASSWORD = os.environ.get('DB_PASSWORD')
+DB_NAME = os.environ.get('DB_NAME')
+DB_PORT = int(os.environ.get('DB_PORT', 3306))
 
 def get_db_connection():
-    connection = mysql.connector.connect(
-        host=os.getenv('DB_HOST', 'localhost'),
-        user=os.getenv('DB_USER', 'root'),
-        password=os.getenv('DB_PASSWORD', ''),
-        database=os.getenv('DB_NAME', 'co_workspace_db')
+    connection = pymysql.connect(
+        host=DB_HOST,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        database=DB_NAME,
+        port=DB_PORT,
+        cursorclass=pymysql.cursors.DictCursor
     )
     return connection
 
