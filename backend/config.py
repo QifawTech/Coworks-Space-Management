@@ -13,8 +13,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Config:
-    SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key')
-    MYSQL_HOST = os.getenv('DB_HOST', 'localhost')
-    MYSQL_USER = os.getenv('DB_USER', 'root')
-    MYSQL_PASSWORD = os.getenv('DB_PASSWORD', '')
-    MYSQL_DB = os.getenv('DB_NAME', 'co_workspace_db')
+    SECRET_KEY = os.environ.get('SECRET_KEY', 'default_secret_key')
+    MYSQL_HOST = os.environ.get('DB_HOST')
+    MYSQL_USER = os.environ.get('DB_USER')
+    MYSQL_PASSWORD = os.environ.get('DB_PASSWORD')
+    MYSQL_DB = os.environ.get('DB_NAME')
+    MYSQL_PORT = int(os.environ.get('DB_PORT', 3306))
