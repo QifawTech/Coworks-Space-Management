@@ -4,12 +4,12 @@ frontend:
     preBuild:
       commands:
         - cd frontend
-        - npm install
-        - chmod +x node_modules/.bin/vite
+        - npm ci
+        - chmod -R +x node_modules/.bin
     build:
       commands:
         - cd frontend
-        - npm run build
+        - npx vite build
   artifacts:
     baseDirectory: frontend/dist
     files:
