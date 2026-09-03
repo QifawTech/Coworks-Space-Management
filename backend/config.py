@@ -2,8 +2,8 @@
 
 # class Config:
 #     SECRET_KEY = os.environ.get('SECRET_KEY') or 'super_secret_co_workspace_key_2026'
-#     MYSQL_HOST = 'localhost'
-#     MYSQL_USER = 'root'
+#     MYSQL_HOST = flask-db.ctyq26mko53d.ap-south-1.rds.amazonaws.com
+#     MYSQL_USER = admin
 #     MYSQL_PASSWORD = ''  # XAMPP-ல் பாஸ்வேர்ட் எதுவும் இல்லை என்றால் காலியாக விடவும்
 #     MYSQL_DB = 'co_workspace_db'
 import os
