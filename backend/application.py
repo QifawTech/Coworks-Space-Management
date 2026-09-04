@@ -1,7 +1,7 @@
 from flask import Flask, send_from_directory
 from flask_cors import CORS
 import os
-app = application
+
 
 # db.py-ல் இருந்து கனெக்ஷனை இறக்குமதி செய்தல்
 from db import get_db_connection, encrypt_data, decrypt_data
