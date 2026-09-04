@@ -1,5 +1,2 @@
-from application import application
-
-if __name__ == '__main__':
-    application.run()
-
+# wsgi.py
+from application import application  # ← just this one line!
