@@ -1,9 +1,5 @@
-import sys
-import os
+from application import application
 
-sys.path.insert(0, os.path.dirname(__file__))
+if __name__ == '__main__':
+    application.run()
 
-from app import app as application
-
-if __name__ == "__main__":
-    application.run(host='0.0.0.0', port=5000)
