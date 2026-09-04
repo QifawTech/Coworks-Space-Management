@@ -160,7 +160,7 @@ def upload_superadmin_logo():
     os.makedirs(upload_folder, exist_ok=True)
     file.save(os.path.join(upload_folder, filename))
     
-    logo_url = f"http://localhost:5000/uploads/{filename}"
+    logo_url = f"os.environ.get('BASE_URL', 'http://Coworks-backend-env.eba-xqsepujr.ap-south-1.elasticbeanstalk.com')/{filename}"
     conn = get_db_connection()
     cursor = conn.cursor()
     try:
