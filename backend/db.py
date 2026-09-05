@@ -20,6 +20,8 @@ def get_db_connection():
         port=DB_PORT,
         cursorclass=pymysql.cursors.DictCursor
     )
+    _orig_cursor = connection.cursor
+    connection.cursor = lambda *args, **kwargs: _orig_cursor(*args, **{k: v for k, v in kwargs.items() if k != 'dictionary'})
     return connection
 
 def encrypt_data(data):
